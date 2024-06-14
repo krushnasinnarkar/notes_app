@@ -1,0 +1,16 @@
+{
+    "version": 1,
+    "name": "notesapp",
+    "builds": [
+        {
+            "src": ".js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
+    ]
+}
