@@ -5,26 +5,27 @@ import { IoMdClose } from 'react-icons/io'
 const SearchBar = ({ value, onChange, handleSearch, onClearSearch, userInfo }) => {
     if (!userInfo) {
         return null; // Render nothing if userInfo is not available
-    }
-    return (
-        <div className="w-80 flex items-center px-4bg-slate-100 rounded-md">
-            <input
-                type="text"
-                placeholder="Search Notes"
-                className="w-full text-xs bg-transparent py-[11px] outline-none"
-                value={value}
-                onChange={onChange}
-            />
-            {value && (
-                <IoMdClose
-                    className="text-xl text-slate-400 cursor-pointer hover:text-black mr-3"
-                    onClick={onClearSearch}
+    } else {
+        return (
+            <div className="w-80 flex items-center px-4bg-slate-100 rounded-md">
+                <input
+                    type="text"
+                    placeholder="Search Notes"
+                    className="w-full text-xs bg-transparent py-[11px] outline-none"
+                    value={value}
+                    onChange={onChange}
                 />
-            )}
-            <FaMagnifyingGlass className="text-slate-400 cursor-pointer hover:text-black" onClick={handleSearch} />
+                {value && (
+                    <IoMdClose
+                        className="text-xl text-slate-400 cursor-pointer hover:text-black mr-3"
+                        onClick={onClearSearch}
+                    />
+                )}
+                <FaMagnifyingGlass className="text-slate-400 cursor-pointer hover:text-black" onClick={handleSearch} />
 
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
 export default SearchBar
